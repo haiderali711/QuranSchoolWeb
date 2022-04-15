@@ -1,15 +1,11 @@
 # QuranSchoolWeb
 
-This template should help get you started developing with Vue 3 in Vite.
+This Project is the Frontend part of the QuranSchool Project.
+The backend for the same project can be found here : 
 
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
+```sh
+https://github.com/haiderali711/QuranSchool
+```
 ## Project Setup
 
 ```sh
