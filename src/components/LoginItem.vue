@@ -1,5 +1,10 @@
-<script setup>
+<script>
+    export default {
+        props:['showLogin', 'changeShowLogin'],
+        methods : {
 
+        }
+    }
 </script>
 
 <template>
@@ -23,7 +28,7 @@
     </div>
     <button id="buttonlogintoregister" type="submit">Login</button>
   </form>
-  <div id="footer-box"><p class="footer-text">Not a member?<span class="sign-up"> Sign up now</span></p></div>
+  <div id="footer-box"><p class="footer-text">Not a member?<span class="sign-up" @click="changeShowLogin"> Sign up now</span></p></div>
 </div>
 
 </template>

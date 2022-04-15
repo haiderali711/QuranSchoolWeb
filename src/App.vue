@@ -1,5 +1,22 @@
-<script setup>
+<script>
 import { RouterLink, RouterView } from 'vue-router'
+
+export default {
+  components: {RouterLink, RouterView},
+  data() {
+    return {
+      loggedIn : true
+    }
+  },
+  methods : {
+    setLoggedIn () {
+      this.loggedIn = true;
+    },
+    setLoggedOut () {
+      this.loggedIn = false;
+    }
+  }
+}
 
 
 </script>
@@ -13,6 +30,7 @@ import { RouterLink, RouterView } from 'vue-router'
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/students" v-if="loggedIn">Students</RouterLink>
       </nav>
     </div>
   </header>
