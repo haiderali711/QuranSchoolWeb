@@ -1,0 +1,21 @@
+{
+  "name": "quranschoolweb",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 5050"
+  },
+  "dependencies": {
+    "node-sass": "^7.0.1",
+    "pinia": "^2.0.13",
+    "sass-loader": "^12.6.0",
+    "vue": "^3.2.31",
+    "vue-router": "^4.0.14"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.3.1",
+    "sass": "^1.50.0",
+    "vite": "^2.9.1"
+  }
+}
