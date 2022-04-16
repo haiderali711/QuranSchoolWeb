@@ -14,7 +14,7 @@
         <div id="cont-lock">FONT</div>
         <div id="bottom-head"><h1 id="logintoregister">Register A New Teacher</h1></div>
     </div> 
-    <div>
+    <div class="box-content">
         <form action="" method="post">
             <div class="group">      
             <input class="inputMaterial" type="text" required>

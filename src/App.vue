@@ -28,7 +28,7 @@ export default {
     <div class="wrapper">
       <!-- <HelloWorld msg="You did it!" /> -->
       <nav>
-        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/" :loggedIn="loggedIn">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/students" v-if="loggedIn">Students</RouterLink>
       </nav>

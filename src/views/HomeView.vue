@@ -4,11 +4,11 @@ import RegisterItem from '@/components/RegisterItem.vue'
 
 export default {
   name: 'Home',
+  props: ['loggedIn'],
   components: {LoginItem, RegisterItem},
   data() {
     return {
       showLogin : true,
-      loggedIn : true
     }
   },
   methods : {
