@@ -68,7 +68,7 @@ export default {
                     </li>
                     <li class="nav-item">
                       <a
-                        class="nav-link dropdown-toggle"
+                        class="nav-link dropdown-toggle green"
                         id="navbarDropdown"
                         role="button"
                         data-bs-toggle="dropdown"
@@ -86,12 +86,14 @@ export default {
                               class="route-link-class"
                               to="/students"
                               v-if="loggedIn"
-                              >Add new Student</RouterLink
+                              >Manage Students</RouterLink
                             >
                           </a>
                         </li>
                         <li>
-                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">
+                            Manage Payment Records
+                          </a>
                         </li>
                         <li><hr class="dropdown-divider" /></li>
                         <li>
@@ -130,14 +132,19 @@ export default {
   font-weight: normal;
 }
 
+#navbarDropdown {
+  color: hsla(160, 100%, 37%, 1);
+}
+
 header {
   line-height: 1.5;
   max-height: 100vh;
 }
 
 .logo {
-  display: block;
   margin: 0 auto 2rem;
+  height: 60px;
+  width: 60px;
 }
 
 a,

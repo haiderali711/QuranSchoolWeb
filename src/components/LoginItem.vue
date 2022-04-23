@@ -1,39 +1,42 @@
 <script>
-    export default {
-        props:['showLogin', 'changeShowLogin'],
-        methods : {
-
-        }
-    }
+export default {
+  props: ["showLogin", "changeShowLogin"],
+  methods: {},
+};
 </script>
 
 <template>
-<div class="box">
-  <div id="header">
-    <div id="cont-lock"><i class="material-icons lock">lock</i></div>
-    <div id="bottom-head"><h1 id="logintoregister">Login</h1></div>
-  </div> 
-   <form action="" method="post">
-    <div class="group">      
-      <input class="inputMaterial" type="text" required>
-      <span class="highlight"></span>
-      <span class="bar"></span>
-      <label>Username</label>
+  <div class="box">
+    <div id="header">
+      <div id="cont-lock"><i class="bi bi-key"></i></div>
+      <div id="bottom-head"><h1 id="logintoregister">Login</h1></div>
     </div>
-	    <div class="group">      
-      <input class="inputMaterial" type="password" required>
-      <span class="highlight"></span>
-      <span class="bar"></span>
-      <label>Password</label>
+    <form action="" method="post">
+      <div class="group">
+        <input class="inputMaterial" type="text" required />
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Username</label>
+      </div>
+      <div class="group">
+        <input class="inputMaterial" type="password" required />
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Password</label>
+      </div>
+      <button id="buttonlogintoregister" type="submit">Login</button>
+    </form>
+    <div id="footer-box">
+      <p class="footer-text">
+        Not a member?<span class="sign-up" @click="changeShowLogin">
+          Sign up now</span
+        >
+      </p>
     </div>
-    <button id="buttonlogintoregister" type="submit">Login</button>
-  </form>
-  <div id="footer-box"><p class="footer-text">Not a member?<span class="sign-up" @click="changeShowLogin"> Sign up now</span></p></div>
-</div>
-
+  </div>
 </template>
 
-
 <style scoped lang="scss">
-    @import './LoginItem.scss';    
-</style>>
+@import "./styling/LoginItem.scss";
+</style>
+>

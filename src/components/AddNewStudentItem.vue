@@ -1,6 +1,6 @@
 <script>
 export default {
-  props: ["showLogin", "changeShowLogin"],
+  props: ["teacherId"],
   methods: {},
 };
 </script>
@@ -8,9 +8,9 @@ export default {
 <template>
   <div class="box">
     <div id="header">
-      <div id="cont-lock"><i class="bi bi-book"></i></div>
+      <div id="cont-lock"><i class="bi bi-person-plus"></i></div>
       <div id="bottom-head">
-        <h1 id="logintoregister">Register A New Teacher</h1>
+        <h1 id="logintoregister">Add a new Student</h1>
       </div>
     </div>
     <div class="box-content">
@@ -39,7 +39,6 @@ export default {
           <span class="bar"></span>
           <label>Password</label>
         </div>
-        <button id="buttonlogintoregister" type="submit">Register</button>
       </form>
     </div>
     <div id="footer-box">
@@ -53,5 +52,5 @@ export default {
 </template>
 
 <style scoped lang="scss">
-@import "./styling/RegisterItem.scss";
+@import "./styling/AddNewStudentItem.scss";
 </style>
