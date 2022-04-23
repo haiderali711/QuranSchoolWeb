@@ -39,4 +39,3 @@ export default {
 <style scoped lang="scss">
 @import "./styling/LoginItem.scss";
 </style>
->

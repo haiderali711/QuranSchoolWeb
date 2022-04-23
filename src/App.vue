@@ -67,6 +67,13 @@ export default {
                       </a>
                     </li>
                     <li class="nav-item">
+                      <a class="nav-link">
+                        <RouterLink class="route-link-class" to="/attendence"
+                          >Attendence</RouterLink
+                        >
+                      </a>
+                    </li>
+                    <li class="nav-item">
                       <a
                         class="nav-link dropdown-toggle green"
                         id="navbarDropdown"
