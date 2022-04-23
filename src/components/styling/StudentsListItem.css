@@ -37,7 +37,7 @@ h2 a {
   font-weight: bold;
   font-size: 1em;
   text-align: left;
-  color: #185875;
+  color: #495057;
 }
 
 .container td {
@@ -92,7 +92,7 @@ h2 a {
 }
 
 .container td:hover {
-  background-color: #c1c1be;
+  background-color: #fff842;
   color: #403e10;
   font-weight: bold;
 

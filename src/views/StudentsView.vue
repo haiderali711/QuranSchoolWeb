@@ -76,4 +76,8 @@ export default {
 .nav-link:hover {
   color: hsla(160, 100%, 37%, 1);
 }
+
+.nav-tabs {
+  border-bottom-color: #03d9c4;
+}
 </style>

@@ -31,23 +31,33 @@ export default {
           <input class="inputMaterial" type="text" required />
           <span class="highlight"></span>
           <span class="bar"></span>
-          <label>Username</label>
+          <label>Personal Number</label>
         </div>
         <div class="group">
-          <input class="inputMaterial" type="password" required />
+          <input class="inputMaterial" type="text" required />
           <span class="highlight"></span>
           <span class="bar"></span>
-          <label>Password</label>
+          <label>Name</label>
         </div>
+        <div class="group">
+          <input class="inputMaterial" type="text" required />
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Phone Number</label>
+        </div>
+        <div class="group">
+          <input class="inputMaterial" type="text" required />
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Parents Number</label>
+        </div>
+
+        <button id="buttonlogintoregister" type="submit">
+          Add the Student
+        </button>
       </form>
     </div>
-    <div id="footer-box">
-      <p class="footer-text">
-        Already Registered?<span class="sign-up" @click="changeShowLogin">
-          Sign In instead!</span
-        >
-      </p>
-    </div>
+    <div id="footer-box"></div>
   </div>
 </template>
 
