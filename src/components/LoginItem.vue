@@ -1,7 +1,37 @@
 <script>
+import Cookies from "js-cookie";
+import { Api } from "../Api";
 export default {
   props: ["showLogin", "changeShowLogin"],
-  methods: {},
+  data() {
+    return {
+      formUser: {
+        username: "",
+        password: "",
+      },
+      authenticatingResponse: {},
+    };
+  },
+  methods: {
+    checkAuthentication() {
+      // Make axios request here
+      Api.get(
+        "/teacher/" + this.formUser.username + "/" + this.formUser.password
+      )
+        .then((response) => {
+          this.authenticatingResponse = response.data;
+          if (response.status == 200)
+            this.$emit("LoginSuccessful", this.authenticatingResponse);
+        })
+        .catch((error) => {
+          let message = { err: error };
+
+          console.log("error ", message);
+        });
+
+      console.log("Authentication submitted from Login Item");
+    },
+  },
 };
 </script>
 
@@ -11,15 +41,25 @@ export default {
       <div id="cont-lock"><i class="bi bi-key"></i></div>
       <div id="bottom-head"><h1 id="logintoregister">Login</h1></div>
     </div>
-    <form action="" method="post">
+    <form action="" @submit.prevent="checkAuthentication">
       <div class="group">
-        <input class="inputMaterial" type="text" required />
+        <input
+          class="inputMaterial"
+          v-model="formUser.username"
+          type="text"
+          required
+        />
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>Username</label>
       </div>
       <div class="group">
-        <input class="inputMaterial" type="password" required />
+        <input
+          class="inputMaterial"
+          v-model="formUser.password"
+          type="password"
+          required
+        />
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>Password</label>

@@ -27,6 +27,16 @@ const router = createRouter({
       name: "Attendence",
       component: () => import("../views/AttendenceView.vue"),
     },
+    {
+      path: "/sign",
+      name: "SignInOrUp",
+      component: () => import("../views/LogInView.vue"),
+    },
+    {
+      path: "/signout",
+      name: "SignOut",
+      component: HomeView,
+    },
   ],
 });
 

@@ -1,7 +1,22 @@
 <script>
 export default {
   props: ["showLogin", "changeShowLogin"],
-  methods: {},
+  data() {
+    return {
+      newTeacher: {
+        name: "",
+        email: "",
+        username: "",
+        password: "",
+      },
+    };
+  },
+  methods: {
+    createNewTeacher() {
+      // Make axios request here
+      console.log("submitted", this.newTeacher);
+    },
+  },
 };
 </script>
 
@@ -14,27 +29,47 @@ export default {
       </div>
     </div>
     <div class="box-content">
-      <form action="" method="post">
+      <form action="" @submit.prevent="createNewTeacher">
         <div class="group">
-          <input class="inputMaterial" type="text" required />
+          <input
+            class="inputMaterial"
+            v-model="newTeacher.name"
+            type="text"
+            required
+          />
           <span class="highlight"></span>
           <span class="bar"></span>
           <label>Name</label>
         </div>
         <div class="group">
-          <input class="inputMaterial" type="text" required />
+          <input
+            class="inputMaterial"
+            v-model="newTeacher.email"
+            type="text"
+            required
+          />
           <span class="highlight"></span>
           <span class="bar"></span>
           <label>Email</label>
         </div>
         <div class="group">
-          <input class="inputMaterial" type="text" required />
+          <input
+            class="inputMaterial"
+            v-model="newTeacher.username"
+            type="text"
+            required
+          />
           <span class="highlight"></span>
           <span class="bar"></span>
           <label>Username</label>
         </div>
         <div class="group">
-          <input class="inputMaterial" type="password" required />
+          <input
+            class="inputMaterial"
+            v-model="newTeacher.password"
+            type="password"
+            required
+          />
           <span class="highlight"></span>
           <span class="bar"></span>
           <label>Password</label>

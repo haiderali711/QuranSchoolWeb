@@ -1,19 +1,42 @@
 <script>
 import { RouterLink, RouterView } from "vue-router";
+import Cookies from "js-cookie";
 
 export default {
   components: { RouterLink, RouterView },
   data() {
     return {
-      loggedIn: true,
+      loggedIn: false,
     };
+  },
+  created() {
+    let cookies = Cookies.get();
+    console.log("cookies ", cookies, cookies.isLoggedIn);
+
+    if (cookies.isLoggedIn) this.loggedIn = true;
+    else this.loggedIn = false;
+
+    // if (cookie != null) {
+    //   if (cookie.data.user.loggedIn === true) {
+    //     this.loggedIn = true;
+    //     this.mod = cookie.data.user.moderator === true;
+    //   } else {
+    //     this.login = false;
+    //     this.loggedIn = false;
+    //   }
+    // }
   },
   methods: {
     setLoggedIn() {
+      console.log("set log in to true");
       this.loggedIn = true;
+      this.$router.push({ path: "/" });
     },
     setLoggedOut() {
+      console.log("logging out");
       this.loggedIn = false;
+      Cookies.remove("loginId");
+      Cookies.remove("isLoggedIn");
     },
   },
 };
@@ -51,10 +74,7 @@ export default {
                   <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                       <a class="nav-link active" aria-current="page">
-                        <RouterLink
-                          class="route-link-class"
-                          to="/"
-                          :loggedIn="loggedIn"
+                        <RouterLink class="route-link-class" to="/"
                           >Home</RouterLink
                         >
                       </a>
@@ -63,6 +83,16 @@ export default {
                       <a class="nav-link">
                         <RouterLink class="route-link-class" to="/about"
                           >About</RouterLink
+                        >
+                      </a>
+                    </li>
+                    <li class="nav-item" v-if="!loggedIn">
+                      <a class="nav-link">
+                        <RouterLink
+                          class="route-link-class"
+                          to="/sign"
+                          :setLoggedIn="setLoggedIn"
+                          >Login</RouterLink
                         >
                       </a>
                     </li>
@@ -110,6 +140,9 @@ export default {
                         </li>
                       </ul>
                     </li>
+                    <li class="nav-item" v-if="loggedIn">
+                      <a class="nav-link" @click="setLoggedOut">Logout</a>
+                    </li>
                     <!-- <li class="nav-item">
                 <a class="nav-link disabled">Disabled</a>
               </li> -->
@@ -123,7 +156,7 @@ export default {
     </div>
     <div class="row">
       <div class="col">
-        <RouterView />
+        <RouterView @set-logged-in="setLoggedIn" />
       </div>
     </div>
   </div>
@@ -187,6 +220,10 @@ nav a {
   display: inline-block;
   padding: 0 1rem;
   border-left: 1px solid var(--color-border);
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: hsla(160, 100%, 37%, 1);
 }
 
 nav a:first-of-type {
