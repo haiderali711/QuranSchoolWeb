@@ -1,10 +1,21 @@
 <script>
 import TodaysAttendenceItem from "@/components/TodaysAttendenceItem.vue";
 import PreviousAttendenceItem from "@/components/PreviousAttendenceItem.vue";
+import Cookies from "js-cookie";
 
 export default {
   name: "Attendence",
   components: { TodaysAttendenceItem, PreviousAttendenceItem },
+  beforeCreate() {
+    let cookies = Cookies.get();
+    console.log("cookies ", cookies, cookies.isLoggedIn);
+
+    if (!cookies.isLoggedIn) {
+      console.log("redirecting back to 404 cz already not logged in");
+
+      this.$router.push({ path: "/notfound" });
+    }
+  },
   data() {
     return {
       showLogin: true,

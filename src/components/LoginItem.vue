@@ -12,6 +12,16 @@ export default {
       authenticatingResponse: {},
     };
   },
+  beforeCreate() {
+    let cookies = Cookies.get();
+    console.log("cookies ", cookies, cookies.isLoggedIn);
+
+    if (cookies.isLoggedIn) {
+      console.log("redirecting back to Home cz already logged in");
+
+      this.$router.push({ path: "/" });
+    }
+  },
   methods: {
     checkAuthentication() {
       // Make axios request here

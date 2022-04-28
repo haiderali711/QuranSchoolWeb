@@ -1,11 +1,10 @@
 <script>
-import LoginItem from "@/components/LoginItem.vue";
-import RegisterItem from "@/components/RegisterItem.vue";
+import QuranLogoItem from "@/components/QuranLogoItem.vue";
 
 export default {
   name: "Home",
   props: ["loggedIn"],
-  components: { LoginItem, RegisterItem },
+  components: { QuranLogoItem },
   data() {
     return {
       showLogin: true,
@@ -16,5 +15,13 @@ export default {
 </script>
 
 <template>
-  <main>Home</main>
+  <main>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <QuranLogoItem />
+        </div>
+      </div>
+    </div>
+  </main>
 </template>

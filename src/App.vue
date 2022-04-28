@@ -37,6 +37,7 @@ export default {
       this.loggedIn = false;
       Cookies.remove("loginId");
       Cookies.remove("isLoggedIn");
+      this.$router.push({ path: "/" });
     },
   },
 };
@@ -96,14 +97,14 @@ export default {
                         >
                       </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" v-if="loggedIn">
                       <a class="nav-link">
                         <RouterLink class="route-link-class" to="/attendence"
                           >Attendence</RouterLink
                         >
                       </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" v-if="loggedIn">
                       <a
                         class="nav-link dropdown-toggle green"
                         id="navbarDropdown"
@@ -156,7 +157,7 @@ export default {
     </div>
     <div class="row">
       <div class="col">
-        <RouterView @set-logged-in="setLoggedIn" />
+        <RouterView @set-logged-in="setLoggedIn" :loggedIn="loggedIn" />
       </div>
     </div>
   </div>

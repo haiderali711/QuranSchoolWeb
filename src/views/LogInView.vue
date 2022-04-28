@@ -33,6 +33,7 @@ export default {
     <LoginItem
       v-if="showLogin"
       :showLogin="showLogin"
+      :changeShowLogin="changeShowLogin"
       @LoginSuccessful="onSuccessfullLogin"
     />
     <RegisterItem

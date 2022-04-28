@@ -33,6 +33,11 @@ const router = createRouter({
       component: () => import("../views/LogInView.vue"),
     },
     {
+      path: "/notfound",
+      name: "NotFoundPage",
+      component: () => import("../views/404PageView.vue"),
+    },
+    {
       path: "/signout",
       name: "SignOut",
       component: HomeView,
